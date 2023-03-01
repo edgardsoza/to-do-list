@@ -5,18 +5,19 @@ const todolist = [
     completed: false,
     description: 'going to the gym',
     index: 0,
- }, 
+  },
+
   {
     completed: false,
     description: 'take a shower',
     index: 1,
-  }
-    , 
+  },
+ 
   {
     completed: false,
     description: 'have breakfast',
-    index: 2, 
-  }
+    index: 2,
+  },
 ];
 
 function iteration() {
@@ -32,4 +33,4 @@ function iteration() {
   }
 }
 
-document.addEventListener('load',iteration());
+document.addEventListener('load', iteration());
