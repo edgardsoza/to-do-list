@@ -31,9 +31,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Project name<a name="about-project"></a>
+# 📖 To Do List<a name="about-project"></a>
 
-This current project was designed to...
+This current project was designed to implement a to do list and work with JavaScript and webpack.
 
 ## 🛠 Built With <a name="built-with"> HTML, CSS, JS, Webpack</a>
 
@@ -46,13 +46,13 @@ This current project was designed to...
   </ul>
 </details>
 
-<!-- Features -->
+<!-- 
+s -->
 
 ### Key Features <a name="key-features"></a>
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- To do list with for. 
+- Style with CSS imported to js.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,13 +80,13 @@ Installation of Git Installation of NPM A working browser Internet connection A 
 
 ### Setup
 
-Clone this repository to your desired folder: https://github.com/edgardsoza/
+Clone this repository to your desired folder: https://github.com/edgardsoza/to-do-list.
 
 ### Install
 
 Install this project with:
 
-Clone this repository to your desired folder: https://github.com/edgardsoza/
+Clone this repository to your desired folder: https://github.com/edgardsoza/to-do-list
 
 ### Usage
 
@@ -128,9 +128,9 @@ github.io.com
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- Adding and Removing tasks. 
+- Editing tasks.
+- Saving changes to local storage. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,7 +158,7 @@ If you like this project, please invite a coffe at...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank 
+I would like to thank Microverse for this opportunity. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
