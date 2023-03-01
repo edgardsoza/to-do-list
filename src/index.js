@@ -12,7 +12,7 @@ const todolist = [
     description: 'take a shower',
     index: 1,
   },
- 
+
   {
     completed: false,
     description: 'have breakfast',
