@@ -1,8 +1,8 @@
 import './style.css';
 
-const todolist = [{ description: 'going to the gym'}, { description: 'take a shower'}, { description: 'have breakfast'}];
+const todolist = [{ description: 'going to the gym' }, { description: 'take a shower' }, { description: 'have breakfast' }];
 
-function iteration(){
+function iteration() {
   const interactivelist = document.querySelector('.interactive-list');
   for (let i = 0; i < todolist.length; i += 1) {
     const listitem = `
