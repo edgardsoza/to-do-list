@@ -1,6 +1,23 @@
 import './style.css';
 
-const todolist = [{ description: 'going to the gym' }, { description: 'take a shower' }, { description: 'have breakfast' }];
+const todolist = [
+  {
+    completed: false,
+    description: 'going to the gym',
+    index: 0,
+ }, 
+  {
+    completed: false,
+    description: 'take a shower',
+    index: 1,
+  }
+    , 
+  {
+    completed: false,
+    description: 'have breakfast',
+    index: 2, 
+  }
+];
 
 function iteration() {
   const interactivelist = document.querySelector('.interactive-list');
@@ -15,4 +32,4 @@ function iteration() {
   }
 }
 
-iteration(todolist);
+document.addEventListener('load',iteration());
