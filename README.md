@@ -42,24 +42,12 @@ This current project was designed to implement a to do list and work with JavaSc
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a>HTML</a></li>
+    <li><a>CSS</a></li>
+    <li><a>JavaScript</a></li>
+    <li><a>Webpack</a></li>
   </ul>
 </details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
 
 <!-- 
 s -->
