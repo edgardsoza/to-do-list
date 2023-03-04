@@ -51,7 +51,8 @@ const reassignedindex = (filteredArray) => {
 };
 
 window.changetodo = (id) => {
-  const number = parseInt(id);
+  const radix = 10;
+  const number = parseInt(id, radix);
   const updatetodo = document.getElementById(`${id}`).value;
   const updatearray = todolist.map((item) => {
     if (item.index === (number)) {
