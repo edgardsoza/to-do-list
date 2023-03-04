@@ -10,18 +10,17 @@ function addtodolist() {
   todolist.push(newtask);
   localStorage.setItem('newtask', JSON.stringify(todolist));
   descriptioninput.value = '';
-};
+}
 
 function displaylist() {
   if (localStorage) {
     todolist = JSON.parse(localStorage.newtask);
-  }
-  else {
+  } else {
     todolist = [];
   }
   const interactivelist = document.querySelector('.interactive-list');
   interactivelist.textContent = '';
-for (let i = 0; i < todolist.length; i += 1) {
+  for (let i = 0; i < todolist.length; i += 1) {
     const listitem = document.createElement('li');
     const inputitem = document.createElement('input');
     inputitem.value = todolist[i].completed;
@@ -66,7 +65,7 @@ window.changetodo = (id) => {
 };
 
 window.removetodo = (id) => {
-  const filteredArray = todolist.filter(todo => (todo) !== todolist[id - 1]);
+  const filteredArray = todolist.filter(todo => todo !== (todolist[id - 1]));
   reassignedindex(filteredArray);
   localStorage.setItem('newtask', JSON.stringify(filteredArray));
   displaylist();
