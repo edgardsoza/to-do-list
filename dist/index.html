@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>To do List</title>
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
+    <section class="tasklist">
+    <div class="listname">
+        <h2 class="headerlist">Today's To Do</h2>
+        <span class="material-symbols-outlined" id="sync">
+            sync
+            </span>
+    </div>
     <div class="input-items">
-    <input type="text" id="task" name="task" required>
-    <button type="submit" class="submit">Submit</button> 
+    <input type="text" id="task" name="task" placeholder="Add to your list..." required>
+    <button type="submit" class="submit"><span class="material-symbols-sharp" id="enter">
+        keyboard_return
+        </span></button>
     </div>
     <div class="to-do-list">
         <ul class="interactive-list">
 
         </ul>
+        <button class="clearbutton" type="submit">Clear all completed</button>
     </div>
+</section>
 </body>
 </html>
