@@ -2,6 +2,8 @@ import task from './tasks.js';
 
 let todolist = [];
 const descriptioninput = document.getElementById('task');
+const savedata = localStorage.getItem('newtask');
+
 function addtodolist () {
     const index = todolist.length + 1; 
     const completed = false;
@@ -12,7 +14,7 @@ function addtodolist () {
   };
   
   function displaylist() {
-    if (localStorage) {
+    if (savedata) {
         todolist = JSON.parse(localStorage.newtask);}
           else {
           todolist = [];
@@ -49,6 +51,7 @@ const reassignedindex = (filteredArray) => {
   })};
 
   window.changetodo = (id) => {
+    console.log(id);
     const updatetodo = document.getElementById(`${id}`).value;
     const updatearray = todolist.map((item) => {
       if (item.index === id) {
