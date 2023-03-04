@@ -65,7 +65,7 @@ window.changetodo = (id) => {
 };
 
 window.removetodo = (id) => {
-  const filteredArray = todolist.filter(todo => todo !== (todolist[id - 1]));
+  const filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
   reassignedindex(filteredArray);
   localStorage.setItem('newtask', JSON.stringify(filteredArray));
   displaylist();
