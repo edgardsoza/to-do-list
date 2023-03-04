@@ -53,8 +53,9 @@ const reassignedindex = (filteredArray) => {
 window.changetodo = (id) => {
   const updatetodo = document.getElementById(`${id}`).value;
   const updatearray = todolist.map((item) => {
-    if (item.index == id) {
+    if (item.index == (id)) {
       item.description = updatetodo;
+      console.log(item.description);
     }
     return item;
   });
