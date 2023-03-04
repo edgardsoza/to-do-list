@@ -53,9 +53,7 @@ const reassignedindex = (filteredArray) => {
 window.changetodo = (id) => {
   const updatetodo = document.getElementById(`${id}`).value;
   const updatearray = todolist.map((item) => {
-    /* eslint-disable */
     if (item.index == id) {
-            /* eslint-enable */
       item.description = updatetodo;
     }
     return item;
