@@ -9,5 +9,5 @@ submitbtn.addEventListener('click', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-    displaylist();
+  displaylist();
 });

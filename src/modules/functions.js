@@ -1,26 +1,27 @@
-import task from './tasks.js';
+import Task from './tasks.js';
 
 let todolist = [];
 const descriptioninput = document.getElementById('task');
 
-function addtodolist () {
-    const index = todolist.length + 1; 
-    const completed = false;
-    const newtask = new task(completed, descriptioninput.value, index);
-    todolist.push(newtask);
-    localStorage.setItem('newtask', JSON.stringify(todolist));
-    descriptioninput.value = '';
-  };
-  
+function addtodolist() {
+  const index = todolist.length + 1;
+  const completed = false;
+  const newtask = new Task(completed, descriptioninput.value, index);
+  todolist.push(newtask);
+  localStorage.setItem('newtask', JSON.stringify(todolist));
+  descriptioninput.value = '';
+};
+
 function displaylist() {
-if (localStorage) {
-    todolist = JSON.parse(localStorage.newtask);}
-        else {
+  if (localStorage) {
+    todolist = JSON.parse(localStorage.newtask);
+  }
+  else {
     todolist = [];
-    };
-const interactivelist = document.querySelector('.interactive-list');
-interactivelist.textContent = '';
-for (let i = 0 ; i < todolist.length; i += 1) {
+  }
+  const interactivelist = document.querySelector('.interactive-list');
+  interactivelist.textContent = '';
+for (let i = 0; i < todolist.length; i += 1) {
     const listitem = document.createElement('li');
     const inputitem = document.createElement('input');
     inputitem.value = todolist[i].completed;
@@ -41,28 +42,31 @@ for (let i = 0 ; i < todolist.length; i += 1) {
     indexid.textContent = 'delete';
     listitem.append(inputitem, inputtodo, indexid);
     interactivelist.appendChild(listitem);
+  }
 }
-};
 
 const reassignedindex = (filteredArray) => {
   filteredArray.forEach((item, i) => {
-  item.index = i + 1 ;
-  })};
+    item.index = i + 1;
+  });
+};
 
 window.changetodo = (id) => {
-const updatetodo = document.getElementById(`${id}`).value;
-const updatearray = todolist.map((item) => {
+  const updatetodo = document.getElementById(`${id}`).value;
+  const updatearray = todolist.map((item) => {
+    /* eslint-disable */
     if (item.index == id) {
-    item.description = updatetodo;
+            /* eslint-enable */
+      item.description = updatetodo;
     }
     return item;
-});
-localStorage.setItem('newtask', JSON.stringify(updatearray));
-displaylist();
+  });
+  localStorage.setItem('newtask', JSON.stringify(updatearray));
+  displaylist();
 };
 
 window.removetodo = (id) => {
-  const filteredArray = todolist.filter(todo => todo !== todolist[id - 1]);
+  const filteredArray = todolist.filter(todo => (todo) !== todolist[id - 1]);
   reassignedindex(filteredArray);
   localStorage.setItem('newtask', JSON.stringify(filteredArray));
   displaylist();
