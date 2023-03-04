@@ -1,8 +1,7 @@
 import './style.css';
-import {addtodolist, displaylist} from './modules/functions.js';
+import { addtodolist, displaylist } from './modules/functions.js';
 
 const submitbtn = document.querySelector('.submit');
-const trashbtn = document.querySelector('.trash');
 
 submitbtn.addEventListener('click', () => {
   addtodolist();
@@ -11,4 +10,4 @@ submitbtn.addEventListener('click', () => {
 
 window.addEventListener('DOMContentLoaded', () => {
     displaylist();
-  });
+});
