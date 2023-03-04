@@ -23,10 +23,11 @@ function displaylist() {
   for (let i = 0; i < todolist.length; i += 1) {
     const listitem = document.createElement('li');
     const inputitem = document.createElement('input');
-    inputitem.value = todolist[i].completed;
+    inputitem.checked = todolist[i].completed;
     inputitem.classList.add('checkbox');
-    inputitem.setAttribute('id', 'checkbox');
+    inputitem.setAttribute('id', todolist[i].index);
     inputitem.setAttribute('type', 'checkbox');
+    inputitem.setAttribute('onchange', 'checkboxtodo(id)');
     const inputtodo = document.createElement('input');
     inputtodo.setAttribute('onchange', 'changetodo(id)');
     inputtodo.setAttribute('type', 'text');
@@ -43,6 +44,20 @@ function displaylist() {
     interactivelist.appendChild(listitem);
   }
 }
+
+window.checkboxtodo = (id) => {
+    const boxvalue = document.getElementById(`${id}`,'.checkbox').checked;
+    const radix = 10;
+    const number = parseInt(id, radix);
+    const updatearray = todolist.map((item) => {
+        if (item.index === (number)) {
+          item.completed = boxvalue;
+        }
+        return item;
+      });
+    localStorage.setItem('newtask', JSON.stringify(updatearray));
+    (displaylist);
+  }  
 
 const reassignedindex = (filteredArray) => {
   filteredArray.forEach((item, i) => {
@@ -71,4 +86,11 @@ window.removetodo = (id) => {
   displaylist();
 };
 
-export { displaylist, addtodolist };
+function clearlist() {
+  const filteredArray = todolist.filter((todo) => todo.completed === false);
+  reassignedindex(filteredArray);
+  localStorage.setItem('newtask', JSON.stringify(filteredArray));
+  window.location.reload();
+}
+
+export { displaylist, addtodolist, clearlist };
