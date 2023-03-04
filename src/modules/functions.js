@@ -46,18 +46,18 @@ function displaylist() {
 }
 
 window.checkboxtodo = (id) => {
-    const boxvalue = document.getElementById(`${id}`,'.checkbox').checked;
-    const radix = 10;
-    const number = parseInt(id, radix);
-    const updatearray = todolist.map((item) => {
-        if (item.index === (number)) {
-          item.completed = boxvalue;
-        }
-        return item;
-      });
-    localStorage.setItem('newtask', JSON.stringify(updatearray));
-    (displaylist);
-  }  
+  const boxvalue = document.getElementById(`${id}`, '.checkbox').checked;
+  const radix = 10;
+  const number = parseInt(id, radix);
+  const updatearray = todolist.map((item) => {
+    if (item.index === (number)) {
+      item.completed = boxvalue;
+    }
+    return item;
+  });
+  localStorage.setItem('newtask', JSON.stringify(updatearray));
+  displaylist();
+};
 
 const reassignedindex = (filteredArray) => {
   filteredArray.forEach((item, i) => {
