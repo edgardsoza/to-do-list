@@ -35,16 +35,31 @@
 
 This current project was designed to implement a to do list and work with JavaScript and webpack.
 
-## 🛠 Built With <a name="built-with"> HTML, CSS, JS, Webpack</a>
+## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Visual Studio Code</summary>
+  <summary>Client</summary>
   <ul>
-    <li><a href="https://code.visualstudio.com/">Visual Studio</a></li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
   </ul>
 </details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://expressjs.com/">Express.js</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
+
 
 <!-- 
 s -->
