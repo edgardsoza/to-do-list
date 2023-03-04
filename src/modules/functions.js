@@ -2,7 +2,6 @@ import task from './tasks.js';
 
 let todolist = [];
 const descriptioninput = document.getElementById('task');
-const savedata = localStorage.getItem('newtask');
 
 function addtodolist () {
     const index = todolist.length + 1; 
@@ -14,11 +13,12 @@ function addtodolist () {
   };
   
   function displaylist() {
-    if (savedata) {
+    if (localStorage) {
         todolist = JSON.parse(localStorage.newtask);}
           else {
-          todolist = [];
+        todolist = [];
         };
+        console.log(todolist);
     const interactivelist = document.querySelector('.interactive-list');
     interactivelist.textContent = '';
     for (let i = 0 ; i < todolist.length; i += 1) {
@@ -28,11 +28,11 @@ function addtodolist () {
         inputitem.classList.add('checkbox');
         inputitem.setAttribute('id', 'checkbox');
         inputitem.setAttribute('type', 'checkbox');
-        const inputtodo = document.createElement('label');
-        inputtodo.setAttribute('id', todolist[i].index);
+        const inputtodo = document.createElement('input');
         inputtodo.setAttribute('onchange', 'changetodo(id)');
-        inputtodo.textContent = todolist[i].description;
         inputtodo.setAttribute('type', 'text');
+        inputtodo.setAttribute('id', todolist[i].index);
+        inputtodo.value = todolist[i].description;
         inputtodo.classList.add('todotask');
         const indexid = document.createElement('span');
         indexid.setAttribute('id', todolist[i].index);
@@ -51,16 +51,15 @@ const reassignedindex = (filteredArray) => {
   })};
 
   window.changetodo = (id) => {
-    console.log(id);
     const updatetodo = document.getElementById(`${id}`).value;
     const updatearray = todolist.map((item) => {
-      if (item.index === id) {
+      if (item.index == id) {
         item.description = updatetodo;
       }
       return item;
     });
     localStorage.setItem('newtask', JSON.stringify(updatearray));
-    console.log(updatearray);
+    displaylist();
 };
 
 window.removetodo = (id) => {
