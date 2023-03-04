@@ -51,11 +51,11 @@ const reassignedindex = (filteredArray) => {
 };
 
 window.changetodo = (id) => {
+  const number = parseInt(id);
   const updatetodo = document.getElementById(`${id}`).value;
   const updatearray = todolist.map((item) => {
-    if (item.index == (id)) {
+    if (item.index === (number)) {
       item.description = updatetodo;
-      console.log(item.description);
     }
     return item;
   });
