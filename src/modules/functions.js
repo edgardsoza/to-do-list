@@ -27,9 +27,10 @@ function addtodolist () {
         inputitem.setAttribute('id', 'checkbox');
         inputitem.setAttribute('type', 'checkbox');
         const inputtodo = document.createElement('label');
+        inputtodo.setAttribute('id', todolist[i].index);
+        inputtodo.setAttribute('onchange', 'changetodo(id)');
         inputtodo.textContent = todolist[i].description;
         inputtodo.setAttribute('type', 'text');
-        inputtodo.setAttribute('id', 'todotask');
         inputtodo.classList.add('todotask');
         const indexid = document.createElement('span');
         indexid.setAttribute('id', todolist[i].index);
@@ -42,10 +43,22 @@ function addtodolist () {
     }
   };
 
-  const reassignedindex = (filteredArray) => {
-    filteredArray.forEach((item, i) => {
-    item.index = i + 1 ;
-    })};
+const reassignedindex = (filteredArray) => {
+  filteredArray.forEach((item, i) => {
+  item.index = i + 1 ;
+  })};
+
+  window.changetodo = (id) => {
+    const updatetodo = document.getElementById(`${id}`).value;
+    const updatearray = todolist.map((item) => {
+      if (item.index === id) {
+        item.description = updatetodo;
+      }
+      return item;
+    });
+    localStorage.setItem('newtask', JSON.stringify(updatearray));
+    console.log(updatearray);
+};
 
 window.removetodo = (id) => {
   const filteredArray = todolist.filter(todo => todo != todolist[id-1]);

@@ -50,7 +50,7 @@ html {
 }
 
 #task,
-#todotask {
+.todotask {
   margin-left: 0.5rem;
   padding-left: 1rem;
   font-size: 1.1rem;
