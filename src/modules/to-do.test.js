@@ -22,7 +22,6 @@ function addtodolist() {
 window.removetodo = (id) => {
   const filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
   reassignedindex(filteredArray);
-  // displaylist();
   return filteredArray;
 };
 
