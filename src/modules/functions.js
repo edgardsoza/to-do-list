@@ -1,9 +1,9 @@
 import Task from './tasks.js';
 
-export let todolist = [];
+let todolist = [];
 const descriptioninput = document.getElementById('task');
 
-export function addtodolist() {
+function addtodolist() {
   const index = todolist.length + 1;
   const completed = false;
   const newtask = new Task(completed, descriptioninput.value, index);
@@ -93,4 +93,4 @@ function clearlist() {
   window.location.reload();
 }
 
-export { displaylist, addtodolist, clearlist };
+export { displaylist, addtodolist, clearlist, reassignedindex };
