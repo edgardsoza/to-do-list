@@ -94,5 +94,5 @@ function clearlist() {
 }
 
 export {
-  displaylist, addtodolist, clearlist, reassignedindex
+  displaylist, addtodolist, clearlist, reassignedindex,
 };
