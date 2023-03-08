@@ -1,4 +1,4 @@
-const todolist = [];
+let todolist = [];
 
 function localStorageSet() {
   todolist = JSON.parse(localStorage.newtask);
@@ -7,7 +7,6 @@ function localStorageSet() {
 function displaylist() {
   if (localStorage) {
     localStorageSet();
-  } else {
   }
   const interactivelist = document.querySelector('.interactive-list');
   interactivelist.textContent = '';
@@ -34,10 +33,10 @@ function displaylist() {
     listitem.append(inputitem, inputtodo, indexid);
     interactivelist.appendChild(listitem);
   }
-  }
+}
 
 function localStorageSave() {
   localStorage.setItem('newtask', JSON.stringify(todolist));
 }
 
-export {localStorageSave, displaylist, localStorageSet};
+export { localStorageSave, displaylist, localStorageSet };
