@@ -1,9 +1,9 @@
 import Task from './tasks.js';
 
-let todolist = [];
+export let todolist = [];
 const descriptioninput = document.getElementById('task');
 
-function addtodolist() {
+export function addtodolist() {
   const index = todolist.length + 1;
   const completed = false;
   const newtask = new Task(completed, descriptioninput.value, index);

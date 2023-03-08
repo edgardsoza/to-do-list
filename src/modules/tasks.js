@@ -5,3 +5,7 @@ export default class Task {
     this.index = index;
   }
 }
+
+export function bonjour(str) {
+  return str;
+}
