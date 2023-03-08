@@ -1,7 +1,3 @@
-export function localStorageSave () {
-  localStorage.setItem('newtask', JSON.stringify(todolist));
-}
-
 function localStorageSet () {
     todolist = JSON.parse(localStorage.newtask);
 }
@@ -37,4 +33,8 @@ function displaylist() {
       listitem.append(inputitem, inputtodo, indexid);
       interactivelist.appendChild(listitem);
     }
+  }
+
+  export function localStorageSave() {
+    localStorage.setItem('newtask', JSON.stringify(todolist));
   }

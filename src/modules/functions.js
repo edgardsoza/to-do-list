@@ -93,4 +93,6 @@ function clearlist() {
   window.location.reload();
 }
 
-export { displaylist, addtodolist, clearlist, reassignedindex };
+export {
+  displaylist, addtodolist, clearlist, reassignedindex
+};
