@@ -9,8 +9,6 @@ import { localStorageSave , displaylist} from './to-do.js';
 import { reassignedindex } from './functions.js';
 
 
-
-
 let todolist = [];
 let descriptioninput = '';
 function addtodolist() {
@@ -22,13 +20,12 @@ function addtodolist() {
     descriptioninput.value = '';
   }
 
-  /*function removetodo(id) {
-    let filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
-    reassignedindex(filteredArray);
-    return filteredArray;
-    
-    displaylist();
-  };*/
+  window.removetodo = (id) => {
+    const filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
+    reassignedindex(filteredArray); 
+    //displaylist();
+    return filteredArray
+  };
 
 describe('add and delete in to-do-list', () => {
 
@@ -46,21 +43,25 @@ describe('add and delete in to-do-list', () => {
         expect(todolist.length).toBe(1);
     });
 
-   /* test('remove something', () => {
-        document.body.innerHTML = 
+   test('remove something', () => {
+      document.body.innerHTML = 
         '<div class="to-do-list">'+
-        '<ul class="interactive-list">'+
-
-        '</ul>'+
-        '<button class="clearbutton" type="submit">Clear all completed</button>'+
+        '<div class="interactive-list">' + 
+        '<li>' +
+        '<input class="checkbox" id="1" type="checkbox" onchange="checkboxtodo(id)">' +
+        '<input onchange="changetodo(id)" type="text" id="1" class="todotask">'+
+        '<span id="1" class="material-symbols-outlined trash" onclick="removetodo(id)">delete</span>'+
+        '</li>' +
+        '<li>' +
+        '<input class="ch" id="1" type="checkbox" onchange="checkboxtodo(id)">' +
+        '<input onchange="changetodo(id)" type="text" id="1" class="todotask">'+
+        '<span id="1" class="material-symbols-outlined trash" onclick="removetodo(id)">delete</span>'+
+        '</li>' +
+        '</div>' + 
         '</div>';
-        todolist = [];
-      todolist.push(new Task(false, 'work', 1));
-      todolist.push(new Task(false, 'work', 2));
-      todolist.push(new Task(false, 'work', 3));
-      let tab = removetodo(1);
-      
-      expect(tab.length).toBe(2);
-    })*/
-});
 
+        todolist = [{completed: false,description: 'Play Soccer', index: 1}, {completed: false,description: 'Play Soccer', index: 2}];
+        const filteredArray1=window.removetodo(1);
+        expect(filteredArray1.length).toBe(1);
+    })
+});
