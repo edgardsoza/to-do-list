@@ -1,10 +1,11 @@
 /**
  * @jest-environment jsdom
  */
-import { localStorageSave} from './to-do.js';
+import { localStorageSave } from './to-do.js';
 import { reassignedindex } from './functions.js';
 
 import Task from './tasks.js';
+
 jest.mock('./to-do');
 
 let todolist = [];
@@ -20,13 +21,13 @@ function addtodolist() {
 
 window.removetodo = (id) => {
   const filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
-  reassignedindex(filteredArray); 
-  //displaylist();
+  reassignedindex(filteredArray);
+  // displaylist();
   return filteredArray;
 };
 
 describe('add and delete in to-do-list', () => {
-    test('add something', () => {
+  test('add something', () => {
     document.body.innerHTML = '<div class="input-items">'
         + '<input type="text" id="task" name="task" placeholder="Add to your list..." required>'
         + '<button type="submit" class="submit"><span class="material-symbols-sharp" id="enter">'
