@@ -2,6 +2,8 @@
  * @jest-environment jsdom
  */
 
+import { todolist, addtodolist, removetodo } from './functions.js';
+
 import { todolist,addtodolist, removetodo } from './functions.js';
 jest.mock('./to-do');
 
@@ -33,7 +35,7 @@ describe('add and delete in to-do-list', () => {
         + '</div>'
         + '</div>';
 
-    let todolist1 = [{ completed: false, description: 'Play Soccer', index: 1 }, { completed: false, description: 'Play Soccer', index: 2 }];
+    const todolist1 = [{ completed: false, description: 'Play Soccer', index: 1 }, { completed: false, description: 'Play Soccer', index: 2 }];
     const filteredArray1 = removetodo(1, todolist1);
     expect(filteredArray1.length).toBe(1);
   });
