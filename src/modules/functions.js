@@ -1,7 +1,7 @@
 import Task from './tasks.js';
 import { localStorageSave, localStorageSet } from './to-do.js';
 
-const  todolist = [];
+const todolist = [];
 
 function addtodolist() {
   const index = todolist.length + 1;
@@ -14,7 +14,7 @@ function addtodolist() {
 
 function displaylist() {
   if (localStorage) {
-    let todolist = JSON.parse(localStorage.newtask);
+    const todolist = JSON.parse(localStorage.newtask);
   } else {
     todolist = [];
   }
