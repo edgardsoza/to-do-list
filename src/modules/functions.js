@@ -1,7 +1,7 @@
 import Task from './tasks.js';
 import { localStorageSave, localStorageSet } from './to-do.js';
 
-let todolist = [];
+const todolist = [];
 
 function addtodolist() {
   const index = todolist.length + 1;
@@ -83,9 +83,9 @@ function removetodo(id, todolist) {
   const filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
   reassignedindex(filteredArray);
   localStorageSet();
-  
+
   return filteredArray;
-};
+}
 
 function clearlist() {
   const filteredArray = todolist.filter((todo) => todo.completed === false);
@@ -95,5 +95,5 @@ function clearlist() {
 }
 
 export {
-  displaylist, addtodolist, clearlist, reassignedindex,todolist, removetodo
+  displaylist, addtodolist, clearlist, reassignedindex, todolist, removetodo,
 };
