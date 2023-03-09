@@ -1,7 +1,8 @@
 import Task from './tasks.js';
 import { localStorageSave, localStorageSet } from './to-do.js';
 
-const todolist = [];
+let todolist = [];
+todolist = [];
 
 function addtodolist() {
   const index = todolist.length + 1;
