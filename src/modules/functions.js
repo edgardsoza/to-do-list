@@ -1,15 +1,15 @@
 import Task from './tasks.js';
+import { localStorageSave, localStorageSet } from './to-do.js';
 
 let todolist = [];
-const descriptioninput = document.getElementById('task');
 
 function addtodolist() {
   const index = todolist.length + 1;
   const completed = false;
-  const newtask = new Task(completed, descriptioninput.value, index);
+  const newtask = new Task(completed, document.getElementById('task').value, index);
   todolist.push(newtask);
-  localStorage.setItem('newtask', JSON.stringify(todolist));
-  descriptioninput.value = '';
+  localStorageSave();
+  document.getElementById('task').value = '';
 }
 
 function displaylist() {
@@ -79,11 +79,12 @@ window.changetodo = (id) => {
   displaylist();
 };
 
-window.removetodo = (id) => {
+function removetodo(id, todolist) {
   const filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
   reassignedindex(filteredArray);
-  localStorage.setItem('newtask', JSON.stringify(filteredArray));
-  displaylist();
+  localStorageSet();
+  
+  return filteredArray;
 };
 
 function clearlist() {
@@ -94,5 +95,5 @@ function clearlist() {
 }
 
 export {
-  displaylist, addtodolist, clearlist, reassignedindex,
+  displaylist, addtodolist, clearlist, reassignedindex,todolist, removetodo
 };
