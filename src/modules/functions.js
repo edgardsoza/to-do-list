@@ -1,5 +1,5 @@
 import Task from './tasks.js';
-import { localStorageSave, localStorageSet, displaylist} from './to-do.js';
+import { localStorageSave, localStorageSet, displaylist } from './to-do.js';
 
 const todolist = [];
 
