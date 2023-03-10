@@ -43,6 +43,7 @@ function changetodo(id) {
     }
   });
   localStorageSet();
+  return updatearray
 }
 
 function removetodo(id, todolist) {
