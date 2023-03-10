@@ -32,7 +32,7 @@ const reassignedindex = (filteredArray) => {
   });
 };
 
-window.changetodo = (id) => {
+function changetodo (id) {
   const radix = 10;
   const number = parseInt(id, radix);
   const updatetodo = document.getElementById(`${id}`).value;
@@ -40,10 +40,10 @@ window.changetodo = (id) => {
     if (item.index === (number)) {
       item.description = updatetodo;
     }
-    return item;
+    
   });
-  localStorage.setItem('newtask', JSON.stringify(updatearray));
-  displaylist();
+  localStorageSet();
+  
 };
 
 function removetodo(id, todolist) {
@@ -57,10 +57,10 @@ function removetodo(id, todolist) {
 function clearlist() {
   const filteredArray = todolist.filter((todo) => todo.completed === false);
   reassignedindex(filteredArray);
-  localStorage.setItem('newtask', JSON.stringify(filteredArray));
-  window.location.reload();
+  localStorageSet();
+  return filteredArray;
 }
 
 export {
-  displaylist, addtodolist, clearlist, reassignedindex, todolist, removetodo,
+  displaylist, addtodolist, clearlist, reassignedindex, todolist, removetodo, changetodo,
 };
