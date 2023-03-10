@@ -5,7 +5,7 @@
 import {
   todolist, addtodolist, removetodo, changetodo, clearlist, checkboxtodo,
 } from './functions.js';
-  
+
 jest.mock('./to-do');
 
 describe('add and delete in to-do-list', () => {

@@ -41,9 +41,10 @@ function changetodo(id) {
     if (item.index === (number)) {
       item.description = updatetodo;
     }
+    return item;
   });
   localStorageSet();
-  return updatearray
+  return updatearray;
 }
 
 function removetodo(id, todolist) {
