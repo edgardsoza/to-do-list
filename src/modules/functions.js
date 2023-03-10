@@ -12,8 +12,8 @@ function addtodolist() {
   document.getElementById('task').value = '';
 }
 
-window.checkboxtodo = (id) => {
-  const boxvalue = document.getElementById(`${id}`, '.checkbox').checked;
+function checkboxtodo(id, todolist) {
+  const boxvalue = todolist[id].completed;
   const radix = 10;
   const number = parseInt(id, radix);
   const updatearray = todolist.map((item) => {
@@ -24,6 +24,7 @@ window.checkboxtodo = (id) => {
   });
   localStorage.setItem('newtask', JSON.stringify(updatearray));
   displaylist();
+  return updatearray;
 };
 
 const reassignedindex = (filteredArray) => {
@@ -50,7 +51,6 @@ function removetodo(id, todolist) {
   const filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
   reassignedindex(filteredArray);
   localStorageSet();
-
   return filteredArray;
 }
 
@@ -62,5 +62,5 @@ function clearlist() {
 }
 
 export {
-  displaylist, addtodolist, clearlist, reassignedindex, todolist, removetodo,
+  displaylist, addtodolist, clearlist, checkboxtodo, reassignedindex, todolist, removetodo,
 };

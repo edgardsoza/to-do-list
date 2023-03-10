@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { todolist, addtodolist, removetodo } from './functions.js';
+import { todolist, addtodolist, removetodo, checkboxtodo } from './functions.js';
 
 jest.mock('./to-do');
 
@@ -38,4 +38,10 @@ describe('add and delete in to-do-list', () => {
     const filteredArray1 = removetodo(1, todolist1);
     expect(filteredArray1.length).toBe(1);
   });
+
+  test('change a box', () => {
+    const todolist2 = [{ completed: false, description: 'Play Soccer', index: 1 }, { completed: true, description: 'Play Soccer', index: 2 }];
+    const filteredArray2 = checkboxtodo(1, todolist2);
+    expect(filteredArray2[0].completed).toBe(true);
+  })
 });
