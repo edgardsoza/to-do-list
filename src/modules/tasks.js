@@ -4,6 +4,10 @@ export default class Task {
     this.description = description;
     this.index = index;
   }
+
+  getDescription() {
+    return this.description;
+  }
 }
 
 export function bonjour(str) {

@@ -12,8 +12,8 @@ function addtodolist() {
   document.getElementById('task').value = '';
 }
 
-window.checkboxtodo = (id) => {
-  const boxvalue = document.getElementById(`${id}`, '.checkbox').checked;
+function checkboxtodo(id, todolist) {
+  const boxvalue = todolist[id].completed;
   const radix = 10;
   const number = parseInt(id, radix);
   const updatearray = todolist.map((item) => {
@@ -24,7 +24,8 @@ window.checkboxtodo = (id) => {
   });
   localStorage.setItem('newtask', JSON.stringify(updatearray));
   displaylist();
-};
+  return updatearray;
+}
 
 const reassignedindex = (filteredArray) => {
   filteredArray.forEach((item, i) => {
@@ -32,7 +33,7 @@ const reassignedindex = (filteredArray) => {
   });
 };
 
-window.changetodo = (id) => {
+function changetodo(id) {
   const radix = 10;
   const number = parseInt(id, radix);
   const updatetodo = document.getElementById(`${id}`).value;
@@ -42,25 +43,26 @@ window.changetodo = (id) => {
     }
     return item;
   });
-  localStorage.setItem('newtask', JSON.stringify(updatearray));
-  displaylist();
-};
+  localStorageSet();
+  return updatearray;
+}
 
 function removetodo(id, todolist) {
   const filteredArray = todolist.filter((todo) => todo !== todolist[id - 1]);
   reassignedindex(filteredArray);
   localStorageSet();
-
   return filteredArray;
 }
 
 function clearlist() {
   const filteredArray = todolist.filter((todo) => todo.completed === false);
   reassignedindex(filteredArray);
-  localStorage.setItem('newtask', JSON.stringify(filteredArray));
-  window.location.reload();
+  localStorageSet();
+  return filteredArray;
 }
 
 export {
   displaylist, addtodolist, clearlist, reassignedindex, todolist, removetodo,
+  changetodo, checkboxtodo,
+
 };
