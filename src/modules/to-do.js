@@ -4,6 +4,8 @@ function localStorageSet() {
   todolist = JSON.parse(localStorage.newtask);
 }
 
+//Including comments to try feature branch //
+
 function displaylist() {
   if (localStorage) {
     localStorageSet();
